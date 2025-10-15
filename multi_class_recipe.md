@@ -87,9 +87,6 @@ class Tyre:
     def __init__(self, position):
         # Parameters:
           #   self._position: string
-          #   self.pressure: string
-          #   self.tread_depth: string
-          #   self.reading_date: string
           #   self.readings = [] 
         # Side-effects:
         #   Sets the tyre object properties
@@ -109,7 +106,7 @@ class Tyre:
         # Side-effects:
         # None
 
-    def get_latest_readings(self):
+    def get_latest_reading(self):
     # Parameters:
     # None
     # Returns:
@@ -148,11 +145,37 @@ a more granular level of detail._
 # EXAMPLE
 
 """
-Given a track with a title and an artist
-We see the title reflected in the title property
+Given a tyre with a position 
+when we add a new reading
+we see the information reflected in get reading 
 """
-track = Track("Carte Blanche", "Veracocha")
-track.title # => "Carte Blanche"
+tyre = Tyre("front-left")
+tyre.add_reading("34", "5", "2025/10/15")
+tyre.get_readings => [{"pressure": "34", "treads_depth": "5", "date_taken": "2025/10/15"}]
+
+"""
+Given a tyre with a position 
+when we add two new readings
+we see the newer information reflected in get_latest_reading 
+"""
+tyre = Tyre("front-left")
+tyre.add_reading("34", "5", "2025/10/15")
+tyre.add_reading("30", "3", "2024/12/15")
+tyre.get_latest_reading => [{"pressure": "34", "treads_depth": "5", "date_taken": "2025/10/15"}]
+
+"""
+Given a tyre with a position 
+when we add multiple new readings
+we see the newer information reflected in get_latest_reading 
+"""
+tyre = Tyre("front-left")
+tyre.add_reading("34", "5", "2025/10/15")
+tyre.add_reading("30", "3", "2024/12/15")
+tyre.add_reading("31", "2", "2023/10/15")
+tyre.add_reading("28", "3", "2022/12/15")
+
+tyre.get_latest_reading => [{"pressure": "34", "treads_depth": "5", "date_taken": "2025/10/15"}]
+
 ```
 
 _Encode each example as a test. You can add to the above list as you go._
