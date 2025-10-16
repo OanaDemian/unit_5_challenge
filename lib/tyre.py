@@ -33,13 +33,13 @@ class Tyre():
                 return reading 
             
         
+{'pressure': '34', 'tread depth': '5', 'date': '2025/10/15'}
 
 
-
-tyre = Tyre("front-left")
-tyre.add_reading("34", "5", "2025/10/15")
-tyre.add_reading("30", "3", "2024/12/15")
-print(tyre.get_latest_reading() )
+# tyre = Tyre("front-left")
+# tyre.add_reading("34", "5", "2025/10/15")
+# tyre.add_reading("30", "3", "2024/12/15")
+# print(tyre.get_latest_reading() )
 
         #retrieve the date key for every reading
         #sort the dates

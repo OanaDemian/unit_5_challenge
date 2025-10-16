@@ -40,9 +40,7 @@ uses asciiflow.com but you could also use excalidraw.com, draw.io, or miro.com_
 ┌─────────────────────────────────┐
 │ Tyre(position)                 │
 │                                 │
-│ - position                      │
-│ - pressure                      │
-  - tread_depth 
+│ - position       
   - add_reading() =>  position: {pressure:  33, tread_depth: 4.5, date_taken: 2025/10/09}                 │
 │ - readings:[{date_taken: {pressure:  34, tread_depth: 4.5}}, {date_taken: {pressure:  30, tread_depth: 4.6}}]                   │
 │             │
@@ -54,24 +52,30 @@ _Also design the interface of each class in more detail._
 ```python
 class Car:
     # User-facing properties:
-    #  self._tyres a dictionary of instances of Track
+    #  self._tyres a dictionary of instances of Tyre
 
     def __init__(self):
-        # self._tyres = {"front left": {"pressure": 34, "treads_depth": 1.6mm, "date_taken": "2025/10/15"}, "front right": {}, "rear left" : {}, "rear right": {}}
+         self.tyres = 
+        {
+        "front left":   {Tyre("front left")},
+        "front right":  {Tyre("front right")}, 
+        "rear left" :   {Tyre("rear left")}, 
+        "rear right":   {Tyre("rear right")}
+        }
 
 
-    def add_tyre_info(self, tyre):
-        # Parameters:
-        #   tyre: an instance of Tyre
-        # Side-effects:
-        #   Adds the tyre info to the tyres property of the self object acording to the tyre position e.g. self.tyres[tyre.position]["pressure"] = tyre.pressure
-        pass # No code here yet
+    # def add_tyre_info(self, tyre):
+    #     # Parameters:
+    #     #   tyre: an instance of Tyre
+    #     # Side-effects:
+    #     #   Adds the tyre info to the tyres property of the self object acording to the tyre position e.g. self.tyres[tyre.position]["pressure"] = tyre.pressure
+    #     pass # No code here yet
 
     def history(self):
         # Parameters:
         # None
         # Returns:
-        #   A list of the Tyre objects that have readings
+        #   A list of the all Tyre objects that have readings
         pass # No code here yet
 
     def car_details(self):
